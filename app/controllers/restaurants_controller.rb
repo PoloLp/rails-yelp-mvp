@@ -5,7 +5,11 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show() end
+  def show
+    @reviews = @restaurant.reviews
+    @average = average_rating(@reviews)
+    @empty_stars = blank_stars(@average)
+  end
 
   def new
     @restaurant = Restaurant.new
@@ -35,5 +39,13 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name, :address,
                                        :phone_number, :category)
+  end
+
+  def average_rating(reviews_list)
+    reviews_list.average(:rating).to_i
+  end
+
+  def blank_stars(moyenne)
+    5 - moyenne
   end
 end

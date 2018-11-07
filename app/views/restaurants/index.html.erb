@@ -1,8 +1,6 @@
-<div class="container ctn">
-  <h1>Restaurants paradise</h1>
-</div>
-
 <div class="container">
+  <h1>Restaurants paradise</h1>
+
   <ul class="restaurants-list">
     <% @restaurants.each do |restaurant| %>
       <li>
@@ -10,8 +8,6 @@
          <% end %>
       </li>
   </ul>
-</div>
 
-<div class="container">
   <%= link_to "Add a restaurant", new_restaurant_path, class: "btn  btn-success pull-right"%>
 </div>

@@ -10,4 +10,14 @@ class Restaurant < ApplicationRecord
                                                'french',
                                                'belgian'] }
 
+  before_validation :check_category_case_insensitive
+
+  private
+
+  def check_category_case_insensitive
+    if ['chinese', 'italian', 'japanese', 'french',
+        'belgian'].include?(category.downcase)
+      self.category = category.downcase
+    end
+  end
 end
