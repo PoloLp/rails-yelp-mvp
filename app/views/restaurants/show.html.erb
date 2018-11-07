@@ -1,0 +1,21 @@
+<h1>Dat' Place !</h1>
+
+<div class="container">
+  <div class="restaurant">
+    <h2><%= @restaurant.name %></h2>
+  </div>
+
+  <div class="details">
+    <h3><%= @restaurant.address %></h3>
+  </div>
+
+  <div class="category">
+        <%=  @restaurant.category %>
+  </div>
+
+  </div>
+
+  <%= link_to "back to list", restaurants_path, class: "btn  btn-warning"%>
+
+</div>
+

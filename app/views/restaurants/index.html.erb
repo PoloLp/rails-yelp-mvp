@@ -1,1 +1,17 @@
-<h1>coucou</h1>
+<div class="container ctn">
+  <h1>Restaurants paradise</h1>
+</div>
+
+<div class="container">
+  <ul class="restaurants-list">
+    <% @restaurants.each do |restaurant| %>
+      <li>
+          <%= link_to "#{restaurant.id} | #{restaurant.name}", restaurant_path(restaurant) %>
+         <% end %>
+      </li>
+  </ul>
+</div>
+
+<div class="container">
+  <%= link_to "Add a restaurant", new_restaurant_path, class: "btn  btn-success pull-right"%>
+</div>

@@ -11,6 +11,3 @@ class Restaurant < ApplicationRecord
                                                'belgian'] }
 
 end
-
-# The restaurant category
-# should belong to a fixed list ["chinese", "italian", "japanese", "french", "belgian"].
